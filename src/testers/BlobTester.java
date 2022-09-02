@@ -1,6 +1,6 @@
+package testers;
 import java.io.IOException;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
+import git.Blob;
 
 public class BlobTester {
 
@@ -10,7 +10,7 @@ public class BlobTester {
 		Blob monk = new Blob("./test/something.txt");
 		//File file = new File("./test/something.txt");
 		
-		
+		//this the one
 		
 	}
 
