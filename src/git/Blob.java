@@ -21,24 +21,24 @@ public class Blob {
 	public Blob(String fileName) throws IOException 
 	{
 		//for RegularBlob
-		if (fileName.substring(7).equals("something.txt"))
-		{
+//		if (fileName.substring(7).equals("something.txt"))
+//		{
 		this.fileName = encryptThisString(getFileString(fileName));
 
 		File file = new File(this.fileName);
 		PrintWriter makeFile = new PrintWriter("test/objects/" + file);
 		makeFile.append(getFileString(fileName));
 		makeFile.close();	
-		}
-		else
-		{
-			this.fileName = encryptThisString(getFileString(fileName));
-
-			File file = new File(this.fileName);
-			PrintWriter makeFile = new PrintWriter("test/newObjects/" + file);
-			makeFile.append(getFileString(fileName));
-			makeFile.close();	
-		}
+//		}
+//		else
+//		{
+//			this.fileName = encryptThisString(getFileString(fileName));
+//
+//			File file = new File(this.fileName);
+//			PrintWriter makeFile = new PrintWriter("test/newObjects/" + file);
+//			makeFile.append(getFileString(fileName));
+//			makeFile.close();	
+//		}
 		//for Index
 
 	}
