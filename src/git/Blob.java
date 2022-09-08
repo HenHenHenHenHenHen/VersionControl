@@ -20,29 +20,14 @@ public class Blob {
 
 	public Blob(String fileName) throws IOException 
 	{
-		//for RegularBlob
-//		if (fileName.substring(7).equals("something.txt"))
-//		{
 		this.fileName = encryptThisString(getFileString(fileName));
 
 		File file = new File(this.fileName);
 		PrintWriter makeFile = new PrintWriter("test/objects/" + file);
 		makeFile.append(getFileString(fileName));
 		makeFile.close();	
-//		}
-//		else
-//		{
-//			this.fileName = encryptThisString(getFileString(fileName));
-//
-//			File file = new File(this.fileName);
-//			PrintWriter makeFile = new PrintWriter("test/newObjects/" + file);
-//			makeFile.append(getFileString(fileName));
-//			makeFile.close();	
-//		}
-		//for Index
-
+		compressFile(fileName);
 	}
-	
 	private String getFileString(String fileName) throws IOException{
 		Path filePath = Path.of(fileName);
 
@@ -65,27 +50,29 @@ public class Blob {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	//returns the SHA filename
 	public String getFileName()
 	{
 		return fileName;
 	}
-//	public static void compressFile(String inputPath) throws IOException
-//	{
-//		  //Instantiating the FileInputStream
-//	    
-//	      FileInputStream inputStream = new FileInputStream(inputPath);
-//	      //Instantiating the FileOutputStream
-//	      String outputPath = "test/objects";
-//	      FileOutputStream outputStream = new FileOutputStream(outputPath);
-//	      //Instantiating the DeflaterOutputStream
-//	      DeflaterOutputStream compresser = new DeflaterOutputStream(outputStream);
-//	      int contents;
-//	      while ((contents=inputStream.read())!=-1){
-//	         compresser.write(contents);
-//	      }
-//	      compresser.close();
-//	      System.out.println("File compressed.......");
-//	}
+	public static void compressFile(String inputPath) throws IOException
+	{
+		  //Instantiating the FileInputStream
+	    
+	      FileInputStream inputStream = new FileInputStream(inputPath);
+	      //Instantiating the FileOutputStream
+	      String outputPath = inputPath;
+	      FileOutputStream outputStream = new FileOutputStream(outputPath);
+	      //Instantiating the DeflaterOutputStream
+	      DeflaterOutputStream compresser = new DeflaterOutputStream(outputStream);
+	      int contents;
+	      while ((contents=inputStream.read())!=-1){
+	         compresser.write(contents);
+	      }
+	      compresser.close();
+	      System.out.println("File compressed.......");
+	}
 
 
 }
