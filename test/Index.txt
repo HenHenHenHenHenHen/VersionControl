@@ -1,2 +1,2 @@
-foo.txt : 7bf03ac915c7240345b94df6fb746f3413dc2bdc
-bar.txt : 1c72bada0365341a2b9fc10caa5bcfc2189e5eba
+foo.txt : 7bbf60b89616fd540480a714f690663606d6099b
+bar.txt : aed524fabe75aa82f0d9c900a24b188fc6009a38

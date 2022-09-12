@@ -26,7 +26,7 @@ public class Blob {
 		PrintWriter makeFile = new PrintWriter("test/objects/" + file);
 		makeFile.append(getFileString(fileName));
 		makeFile.close();	
-		compressFile(fileName);
+		//compressFile(fileName);
 	}
 	private String getFileString(String fileName) throws IOException{
 		Path filePath = Path.of(fileName);
