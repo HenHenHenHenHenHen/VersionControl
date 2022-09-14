@@ -15,6 +15,7 @@ public class JoshBlobTest {
 		File testedFile = new File ("joshtest.txt");
 		FileWriter testedFileWriter = new FileWriter (testedFile);
 		testedFileWriter.write("some content");
+		testedFileWriter.close();
 		
 		Blob testBlob = new Blob ("joshtest.txt");
 		assertNotNull ("Blob was null", testBlob);

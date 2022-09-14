@@ -41,12 +41,12 @@ public class JoshIndexTest {
 		Index indexTest = new Index();
 		indexTest.init();
 		
-		File testedFile = new File ("test1.txt");
+		File testedFile = new File ("test/test1.txt");
 		FileWriter testedFileWriter = new FileWriter (testedFile);
 		testedFileWriter.write("some content");
 		indexTest.add("test1.txt");
 		testedFileWriter.close();
-		File testedFile2 = new File ("test2.txt");
+		File testedFile2 = new File ("test/test2.txt");
 		FileWriter testedFileWriter2 = new FileWriter (testedFile2);
 		testedFileWriter2.write("some more content");
 		testedFileWriter2.close();
@@ -54,6 +54,7 @@ public class JoshIndexTest {
 		
 		File objectsFolder = new File ("test/objects");
 		if (objectsFolder.isDirectory() && objectsFolder.list().length != 2) {
+			System.out.print("objects folder not updated with Blobs");
 			fail ("objects folder not updated with Blobs");
 		}
 		
@@ -65,6 +66,7 @@ public class JoshIndexTest {
 		}
 		indexFileScanner.close();
 		if (numOfLines != 2) {
+			System.out.print("index.txt does not contain both file indexes");
 			fail ("index.txt does not contain both file indexes");
 		}
 	}
@@ -74,12 +76,12 @@ public class JoshIndexTest {
 		Index indexTest = new Index();
 		indexTest.init();
 		
-		File testedFile = new File ("test1.txt");
+		File testedFile = new File ("test/test1.txt");
 		FileWriter testedFileWriter = new FileWriter (testedFile);
 		testedFileWriter.write("some content");
 		indexTest.add("test1.txt");
 		testedFileWriter.close();
-		File testedFile2 = new File ("test2.txt");
+		File testedFile2 = new File ("test/test2.txt");
 		FileWriter testedFileWriter2 = new FileWriter (testedFile2);
 		testedFileWriter2.write("some more content");
 		testedFileWriter2.close();
