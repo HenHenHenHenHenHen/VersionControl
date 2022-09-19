@@ -17,7 +17,7 @@ public class Commit {
 	String date;
 	String prev = null;
 	String next = null;
-	public Commit(String pTree, String summary,String author, String parentPointer)
+	public Commit(String pTree, String summary,String author, String parentPointer) throws FileNotFoundException
 	{
 		
 		this.pTree = pTree;
@@ -26,7 +26,7 @@ public class Commit {
 		this.summary = summary;
 		this.author = author;
 		this.date = getDate();
-		
+		writeCommitFile();
 		
 	}
 	
@@ -38,11 +38,12 @@ public class Commit {
 	public void writeCommitFile() throws FileNotFoundException
 	{
 		PrintWriter pw = new PrintWriter("test/objects/" + encryptThisString(subsetFileContents()));
-//		for (String listKey : blobList.keySet())
-//		{
-//			pw.append(listKey + " : " + blobList.get(listKey) + "\n");
-//			
-//		}
+		pw.append(pTree + "\n");
+		pw.append(prev + "\n");
+		pw.append(next + "\n");
+		pw.append(author + "\n");
+		pw.append(date + "\n");
+		pw.append(summary);
 		pw.close();
 	}
 	
@@ -70,10 +71,12 @@ public class Commit {
 		return df.format(new Date());
 		
 	}
-	public static void main(String[] args) {
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-		String data = df.format(new Date());
-		System.out.println(data);
+	public static void main(String[] args) throws FileNotFoundException {
+		
+//		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+//		String data = df.format(new Date());
+//		System.out.println(data);
+		Commit theMit = new Commit(null,"yuh","Jbao","test/objects/1dc0eea45513abfb82439a406563352f1adc697e");
 	}
 
 }
