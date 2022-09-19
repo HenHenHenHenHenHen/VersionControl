@@ -34,8 +34,8 @@ public class Blob {
 		return Files.readString(filePath);
 	}
 	public static String encryptThisString(String input)
-	{
-		try {	         
+	{ 
+		try {	          
 			MessageDigest md = MessageDigest.getInstance("SHA-1");	      
 			byte[] messageDigest = md.digest(input.getBytes());	     
 			BigInteger no = new BigInteger(1, messageDigest);         

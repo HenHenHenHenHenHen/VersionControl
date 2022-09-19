@@ -1,3 +1,4 @@
+package testers;
 import static org.junit.Assert.*;
 
 import java.io.File;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 import org.junit.Test;
 
 import git.Index;
+import git.SHA1;
 
 public class JoshIndexTest {
 	public String readFile (String fileName) {

@@ -1,5 +1,8 @@
+package testers;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import git.TreeObject;
 
 public class TreeObjectTester {
 
